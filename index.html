@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/responsive.css" />
     <script src="https://kit.fontawesome.com/aae2fd00d2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
     <title>Document</title>
 </head>
 <body>
     <section class="py-5">
-        <div class="container">
+        <div id="app" class="container">
           <!-- struttura html del carosello -->
           <div id="carousel-body" class="carousel">
-            <div v-for="slide in slides">
-              {{slide}}
-            </div>
+              <div v-for="(slide, i) in slides">
+                <div class="title">{{slide.title}}</div>
+                
+                <div class="text">{{slide.text}}</div>
+              </div>
           </div>
         </div>
       </section>
-    <script src="https://unpkg.com/vue@3"></script>
     <!--java script-->
     <script src="js/script.js"></script>
 </body>

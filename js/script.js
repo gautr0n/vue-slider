@@ -1,6 +1,8 @@
-export default {
+const { createApp } = Vue
+
+createApp({
     data() {
-        return {
+        return{
             slides: [
                 {
                     image: './img/01.webp',
@@ -25,12 +27,13 @@ export default {
                 }
             ]
         }
-      }
-  }
+    }
+}).mount('#app')
+
 
 const carouselBody = document.getElementById('carousel-body');
  
-const carouselSlide = document.createElement('div');
+/*const carouselSlide = document.createElement('div'); 
 
 for ( let i = 0 ; i < images.length ; i++){
     let slide = document.createElement('div');
@@ -49,7 +52,7 @@ for ( let i = 0 ; i < images.length ; i++){
     carouselSlide.append(slide);
 };
 
-carouselBody.append(carouselSlide);
+carouselBody.append(carouselSlide); */
 
 carouselBody.innerHTML +=
     `<div class="carousel__arrow arrow-left">
