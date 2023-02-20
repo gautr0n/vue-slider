@@ -16,9 +16,10 @@
         <div id="app" class="container">
           <!-- struttura html del carosello -->
           <div id="carousel-body" class="carousel">
-              <div v-for="(slide, i) in slides">
+              <div v-for="(slide, i) in slides"class="slide active" v-if="active">
                 <div class="title">{{slide.title}}</div>
-                
+                {{i}}
+                <img src="./img/01.webp" alt="">
                 <div class="text">{{slide.text}}</div>
               </div>
           </div>
