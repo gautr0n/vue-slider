@@ -25,10 +25,30 @@ createApp({
                     image: './img/05.webp',
                     title: "Marvel's Avengers",
                     text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
-                }
-            ]
+                },
+            ],
+            slideActive: 0,
+            currentIndex: 0
         }
-    }
+    },
+    methods: {
+        nextSlide() {
+            console.log('next')
+            if(this.currentIndex === 4) {
+                this.currentIndex = 0;
+            } else{
+            this.currentIndex++
+            }
+        },
+        prevSlide() {
+            console.log('prev')
+            if(this.currentIndex === 0){
+                this.currentIndex = 4;
+            } else {
+                this.currentIndex--
+            }
+        },
+    },
 }).mount('#app')
 
 
@@ -55,20 +75,20 @@ for ( let i = 0 ; i < images.length ; i++){
 
 carouselBody.append(carouselSlide); */
 
-carouselBody.innerHTML +=
+/* carouselBody.innerHTML +=
     `<div class="carousel__arrow arrow-left">
         <i class="fa-solid fa-chevron-left"></i>
     </div>
 
     <div class="carousel__arrow arrow-right">
         <i class="fa-solid fa-chevron-right"></i>
-    </div>`;
+    </div>`; */
 
-let activeSlide = 0;
+/* let activeSlide = 0;
 const slideElements = document.querySelectorAll('.slide');
-console.log(slideElements);
+console.log(slideElements); */
 
-const rightBtnElement = document.querySelector('.carousel__arrow.arrow-right');
+/* const rightBtnElement = document.querySelector('.carousel__arrow.arrow-right');
 const leftBtnElement = document.querySelector('.carousel__arrow.arrow-left');
 
 rightBtnElement.addEventListener('click', function () {
@@ -125,4 +145,4 @@ leftBtnElement.addEventListener('click', function () {
 
         console.log(activeSlide);
     }
-})
+}) */
